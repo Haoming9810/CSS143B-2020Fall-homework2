@@ -1,12 +1,38 @@
+
 public class Problem2 {
 
     /*
-    Describe your algorithm here in up to 5 sentences:
+      remove duplicate elements and return new size of modified array
+      Create an auxiliary array temp[] to store unique elements.
+      Traverse input array and one by one copy unique elements of arr[] to temp[].
+      Also keep track of count of unique elements. Let this count be j.
+      Copy j elements from temp[] to arr[] and return j
      */
 
-    // Do not change signature (function name, parameters and return type)
-    // Do not use extra space for another array. Solution to be in-pace with O(1) extra memory
+
     public static int remove(int[] nums) {
-        return Integer.MAX_VALUE; // place holder
+
+        if (nums.length==0 || nums.length==1)
+            return nums.length;
+
+        int[] temp = new int[nums.length];
+        int j = 0;
+        for (int i=0; i<nums.length-1; i++)
+
+            if (nums[i] != nums[i+1])
+                temp[j++] = nums[i];
+
+
+        temp[j++] = nums[nums.length-1];
+
+
+        for (int i=0; i<j; i++)
+            nums[i] = temp[i];
+
+        return j;
+
+
     }
 }
+
+

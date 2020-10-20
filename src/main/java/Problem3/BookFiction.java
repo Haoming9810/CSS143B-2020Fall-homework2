@@ -9,12 +9,16 @@ public class BookFiction extends Book {
     public BookFiction(String title, String author, String genres) {
         // homework
         // tip: use the 'super' keyword
+        System.out.println(super.title);
+        System.out.println(super.author);
+        System.out.println(this.genres);
     }
 
     // copy constructor
     public BookFiction(BookFiction anotherBook) {
         // homework
         // tip: use the 'super' keyword
+
     }
 
     @Override
@@ -23,7 +27,9 @@ public class BookFiction extends Book {
     }
 
     @Override
-    public int calcLateFees(int numOfDaysPastDue) {
+    public int calcLateFees( int numOfDaysPastDue) {
+        this.lateFeePerDayInDollar = lateFeePerDayInDollar;
+        return lateFeePerDayInDollar * numOfDaysPastDue;
         // homework
     }
 }
